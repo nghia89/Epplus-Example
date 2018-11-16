@@ -101,7 +101,7 @@ namespace WebTest.Controllers
                 // Format lại color nếu như thỏa điều kiện
                 if (item.Money > 20050)
                 {
-                    // Ở đây chúng ta sẽ format lại theo dạng fromRow,fromCol,toRow,toCol
+                    // format lại theo dạng fromRow,fromCol,toRow,toCol
                     using (var range = worksheet.Cells[i + 2, 1, i + 2, 4])
                     {
                         // Format text đỏ và đậm
@@ -179,7 +179,7 @@ namespace WebTest.Controllers
             // Dòng này rất quan trọng, vì chạy trên firefox hay IE thì dòng này sẽ hiện Save As dialog cho người dùng chọn thư mục để lưu
             // File name của Excel này là ExcelDemo
             Response.AddHeader("Content-Disposition", "attachment; filename=ExcelDemo.xlsx");
-            // Lưu file excel của chúng ta như 1 mảng byte để trả về response
+            // Lưu file excel như 1 mảng byte để trả về response
             Response.BinaryWrite(buffer.ToArray());
             // Send tất cả ouput bytes về phía clients
             Response.Flush();
